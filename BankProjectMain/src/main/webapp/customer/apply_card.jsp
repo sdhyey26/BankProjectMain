@@ -5,7 +5,7 @@
         response.sendRedirect("../login.jsp");
         return;
     }
-    List<Account> accounts = (List<Account>) session.getAttribute("accounts"); // set this in session after login
+    List<Account> accounts = (List<Account>) session.getAttribute("accounts"); 
 %>
 <!DOCTYPE html>
 <html>

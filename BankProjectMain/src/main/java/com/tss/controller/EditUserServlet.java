@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.tss.dao.UserDAO;
 import com.tss.model.User;
 
-/**
- * Servlet implementation class EditUserServlet
- */
+
 @WebServlet("/EditUserServlet")
 public class EditUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
