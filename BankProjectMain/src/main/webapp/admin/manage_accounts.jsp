@@ -15,7 +15,6 @@
             display: flex;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 220px;
             background-color: #2c3e50;
@@ -51,7 +50,6 @@
             padding-left: 25px;
         }
 
-        /* Container */
         .container {
             margin-left: 220px;
             padding: 40px;
@@ -75,7 +73,6 @@
             padding-bottom: 10px;
         }
 
-        /* Alerts */
         .alert {
             padding: 12px 18px;
             border-radius: 6px;
@@ -96,7 +93,6 @@
             border: 1px solid #f5c6cb;
         }
 
-        /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -126,7 +122,6 @@
             background-color: #eef6fd;
         }
 
-        /* Buttons */
         .btn {
             padding: 8px 14px;
             font-size: 0.85rem;
