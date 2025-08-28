@@ -1,0 +1,111 @@
+:root {
+    --primary-bg: #2E2F40;
+    --primary-text: #ffffff;
+    --secondary-text: #b0b0c3;
+    --accent-blue: #58C0E8;
+    --accent-green: #45D19A;
+    --accent-pink: #F58CBA;
+    --accent-purple: #B69BF7;
+    --card-radius: 15px;
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.sidebar {
+    background-color: #1e1f2c;
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    padding: 2rem 1rem;
+    color: var(--secondary-text);
+}
+
+.sidebar h2 {
+    color: var(--primary-text);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background-color: #383951;
+    color: var(--primary-text);
+}
+
+.header {
+    margin-left: 240px;
+    padding: 1rem 2rem;
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid #444;
+}
+
+.content {
+    margin-left: 240px;
+    padding: 2rem;
+}
+
+.card {
+    background-color: #3e3f52;
+    padding: 1.5rem;
+    border-radius: var(--card-radius);
+    color: var(--primary-text);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card-blue { background-color: var(--accent-blue); }
+.card-green { background-color: var(--accent-green); }
+.card-pink  { background-color: var(--accent-pink); }
+.card-purple{ background-color: var(--accent-purple); }
+
+.button {
+    padding: 10px 20px;
+    background-color: var(--accent-blue);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #3bb4da;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #444657;
+    color: white;
+}
+
+input::placeholder {
+    color: #aaa;
+}
