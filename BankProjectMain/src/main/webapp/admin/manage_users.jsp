@@ -15,7 +15,6 @@
             display: flex;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 220px;
             background-color: #2c3e50;
@@ -52,7 +51,6 @@
             padding-left: 25px;
         }
 
-        /* Container */
         .container {
             margin-left: 220px;
             padding: 40px;
@@ -66,7 +64,6 @@
             font-weight: 600;
         }
 
-        /* Section Card */
         .section {
             background: #fff;
             padding: 25px;
@@ -81,7 +78,6 @@
             margin-bottom: 20px;
         }
 
-        /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -111,7 +107,6 @@
             background-color: #eef6fd;
         }
 
-        /* Buttons */
         .btn {
             padding: 8px 14px;
             font-size: 0.85rem;
