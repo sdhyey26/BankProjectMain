@@ -17,7 +17,6 @@
             display: flex;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 220px;
             background-color: #2c3e50;
@@ -53,7 +52,6 @@
             padding-left: 25px;
         }
 
-        /* Main Container */
         .container {
             margin-left: 220px;
             padding: 40px;
@@ -66,7 +64,6 @@
             font-size: 1.8rem;
         }
 
-        /* Section cards */
         .section {
             background: #fff;
             padding: 25px;
@@ -180,7 +177,6 @@
 
 <div class="container">
 
-    <!-- Pending Card Applications -->
     <div class="section">
         <h2>Pending Card Applications</h2>
         <table>
@@ -219,7 +215,6 @@
         </table>
     </div>
 
-    <!-- Registered Users -->
     <div class="section">
         <h2>Registered Users</h2>
         <table>
@@ -242,7 +237,6 @@
         </table>
     </div>
 
-    <!-- Accounts -->
     <div class="section">
         <h2>Accounts</h2>
         <table>
