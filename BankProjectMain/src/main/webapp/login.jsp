@@ -50,9 +50,39 @@
             color: var(--accent-blue);
             text-decoration: underline;
         }
+		.success-dialog {
+		    background-color: #d4edda;  
+		    color: #155724;             
+		    border: 1px solid #c3e6cb;  
+		    padding: 15px 20px;
+		    margin: 20px auto;
+		    border-radius: 8px;
+		    width: 80%;                
+		    max-width: 500px;
+		    font-size: 16px;
+		    font-family: Arial, sans-serif;
+		    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+		    text-align: center;
+		    animation: fadeIn 0.5s ease-in-out;
+		}
+		
+		@keyframes fadeIn {
+		    from { opacity: 0; transform: translateY(-10px); }
+		    to   { opacity: 1; transform: translateY(0); }
+		}
+        
     </style>
 </head>
 <body>
+	<%
+	    String successMessage = (String) session.getAttribute("successMessage");
+	    if (successMessage != null) {
+	%>
+	    <div class="success-dialog"><%= successMessage %></div>
+	<%
+	        session.removeAttribute("successMessage");
+	    }
+	%>
     <div class="login-container">
         <form class="login-box" action="LoginServlet" method="post">
             <h2>Bank Login</h2>

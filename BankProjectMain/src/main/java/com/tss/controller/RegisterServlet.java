@@ -48,6 +48,7 @@ public class RegisterServlet extends HttpServlet {
         boolean success = AuthService.registerUserWithAccount(user);
 
         if (success) {
+            request.getSession().setAttribute("successMessage", "Account created successfully! Please login.");
             response.sendRedirect("login.jsp");
         } else {
             request.setAttribute("error", "Registration failed. Username or Aadhar may already exist.");
