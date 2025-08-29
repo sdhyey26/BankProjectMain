@@ -250,7 +250,7 @@
             <tr>
                 <td><%= acc.getAccountNumber() %></td>
                 <td><%= acc.getAccountType() %></td>
-                <td>₹<%= String.format("%.2f", acc.getBalance()) %></td>
+                <td><%= String.format("%.2f", acc.getBalance()) %></td>
                 <td><%= acc.getUserId() %></td>
             </tr>
             <% } %>

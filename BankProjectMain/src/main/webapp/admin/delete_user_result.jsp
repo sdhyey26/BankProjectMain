@@ -5,6 +5,9 @@
 
     session.removeAttribute("message");
     session.removeAttribute("error");
+
+    String obj = "/";
+    String ctx = request.getContextPath() + obj;
 %>
 <!DOCTYPE html>
 <html>
@@ -96,14 +99,14 @@
 <div class="sidebar">
     <h2>Admin Panel</h2>
     <ul>
-        <li onclick="location.href='AdminDashboardServlet'">Dashboard</li>
-        <li class="active" onclick="location.href='ManageUsersServlet'">Manage Users</li>
-        <li onclick="location.href='ManageAccountsServlet'">Manage Accounts</li>
-        <li onclick="location.href='AdminTransactionServlet'">View Transactions</li>
-        <li onclick="location.href='ManageCardRequestsServlet'">Card Requests</li>
-        <li onclick="location.href='AdminAnalysisServlet'">Analysis</li>
+        <li onclick="location.href='<%=ctx%>AdminDashboardServlet'">Dashboard</li>
+        <li class="active" onclick="location.href='<%=ctx%>ManageUsersServlet'">Manage Users</li>
+        <li onclick="location.href='<%=ctx%>ManageAccountsServlet'">Manage Accounts</li>
+        <li onclick="location.href='<%=ctx%>AdminTransactionServlet'">View Transactions</li>
+        <li onclick="location.href='<%=ctx%>ManageCardRequestsServlet'">Card Requests</li>
+        <li onclick="location.href='<%=ctx%>AdminAnalysisServlet'">Analysis</li>
         
-        <li onclick="location.href='logout.jsp'" style="margin-top: 20px;">Logout</li>
+        <li onclick="location.href='<%=ctx%>/logout.jsp'" style="margin-top: 20px;">Logout</li>
     </ul>
 </div>
 
@@ -115,7 +118,7 @@
             <div class="error"><%= error %></div>
         <% } %>
 
-        <form action="/ManageAccountsServlet" method="get">
+        <form action="<%=ctx%>ManageAccountsServlet" method="get">
             <button type="submit" class="btn">Back to User List</button>
         </form>
     </div>
