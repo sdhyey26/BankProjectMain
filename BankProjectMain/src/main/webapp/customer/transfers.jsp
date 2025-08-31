@@ -4,7 +4,7 @@
 <%
 User user = (User) session.getAttribute("user");
 if (user == null || !"Customer".equals(session.getAttribute("role"))) {
-    response.sendRedirect("../login.jsp");
+    response.sendRedirect("/login.jsp");
     return;
 }
 %>
@@ -92,7 +92,7 @@ if (user == null || !"Customer".equals(session.getAttribute("role"))) {
     .error { background: #ffe6e6; color: #c0392b; border: 1px solid #e74c3c; }
     .success { background: #e6ffed; color: #27ae60; border: 1px solid #2ecc71; }
 
-]    .field-error {
+    .field-error {
         font-size: 0.85rem;
         color: #e74c3c;
         margin-top: 5px;
@@ -131,7 +131,6 @@ if (user == null || !"Customer".equals(session.getAttribute("role"))) {
                     <option value="external">External (To Another Account)</option>
                 </select>
                 <label>Transfer Type</label>
-                <div class="field-error" id="transferTypeError">Please select transfer type</div>
             </div>
 
             <div class="form-group">
@@ -141,19 +140,16 @@ if (user == null || !"Customer".equals(session.getAttribute("role"))) {
                     <option value="Current">Current</option>
                 </select>
                 <label>From Account Type</label>
-                <div class="field-error" id="fromTypeError">Please select an account type</div>
             </div>
 
             <div class="form-group">
                 <input type="text" name="toAccountNumber" id="toAccountNumber" placeholder=" ">
                 <label>To Account Number (for external only)</label>
-                <div class="field-error" id="accountError">Enter valid 10–12 digit account number</div>
             </div>
 
             <div class="form-group">
                 <input type="number" name="amount" id="amount" step="0.01" min="1" placeholder=" " required>
                 <label>Amount</label>
-                <div class="field-error" id="amountError">Amount must be greater than 0</div>
             </div>
 
             <button type="submit">Transfer</button>
@@ -170,57 +166,6 @@ if (user == null || !"Customer".equals(session.getAttribute("role"))) {
             %>
         </form>
     </div>
-
-<script>
-document.getElementById("transferForm").addEventListener("submit", function(e) {
-    let valid = true;
-
-    const transferType = document.getElementById("transferType");
-    const transferTypeError = document.getElementById("transferTypeError");
-    if (!transferType.value) {
-        transferTypeError.style.display = "block";
-        valid = false;
-    } else {
-        transferTypeError.style.display = "none";
-    }
-
-    // From type
-    const fromType = document.getElementById("fromType");
-    const fromTypeError = document.getElementById("fromTypeError");
-    if (!fromType.value) {
-        fromTypeError.style.display = "block";
-        valid = false;
-    } else {
-        fromTypeError.style.display = "none";
-    }
-
-    // Account number (only for external transfer)
-    const toAcc = document.getElementById("toAccountNumber");
-    const accError = document.getElementById("accountError");
-    if (transferType.value === "external") {
-        const accRegex = /^[0-9]{10,12}$/;
-        if (!accRegex.test(toAcc.value.trim())) {
-            accError.style.display = "block";
-            valid = false;
-        } else {
-            accError.style.display = "none";
-        }
-    } else {
-        accError.style.display = "none"; 
-    }
-
-    const amount = document.getElementById("amount");
-    const amountError = document.getElementById("amountError");
-    if (amount.value <= 0) {
-        amountError.style.display = "block";
-        valid = false;
-    } else {
-        amountError.style.display = "none";
-    }
-
-    if (!valid) e.preventDefault();
-});
-</script>
 
 </body>
 </html>
